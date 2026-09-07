@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:#02010b;
+    font-family:Arial,sans-serif;
+    color:white;
+}
+
+.space{
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at center,#32105c 0%,#0b0620 35%,#02010b 75%);
+}
+
+/* SAO */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 6px white;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2}
+    to{opacity:1}
+}
+
+/* TIÊU ĐỀ */
+.title{
+    position:fixed;
+    top:25px;
+    left:0;
+    width:100%;
+    text-align:center;
+    z-index:20;
+}
+
+.title h1{
+    font-size:30px;
+    text-shadow:
+        0 0 10px #ff69b4,
+        0 0 30px #ff1493,
+        0 0 60px #8a2be2;
+    animation:titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow{
+    from{transform:scale(1)}
+    to{transform:scale(1.08)}
+}
+
+/* TÂM VŨ TRỤ */
+.universe{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    perspective:1000px;
+}
+
+/* MẶT TRỜI / TÂM */
+.center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:105px;
+    height:105px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid white;
+    box-shadow:
+        0 0 20px #ff1493,
+        0 0 50px #ff1493,
+        0 0 100px #8a2be2;
+    z-index:10;
+}
+
+.center img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* QUỸ ĐẠO */
+.orbit{
+    position:absolute;
+    left:50%;
+    top:50%;
+    border:1px solid rgba(255,105,180,.3);
+    border-radius:50%;
+    transform-style:preserve-3d;
+    transform:translate(-50%,-50%) rotateX(65deg);
+}
+
+.orbit1{
+    width:230px;
+    height:230px;
+    animation:orbit1 10s linear infinite;
+}
+
+.orbit2{
+    width:340px;
+    height:340px;
+    animation:orbit2 16s linear infinite reverse;
+}
+
+.orbit3{
+    width:450px;
+    height:450px;
+    animation:orbit3 22s linear infinite;
+}
+
+@keyframes orbit1{
+    from{
+        transform:translate(-50%,-50%) rotateX(65deg) rotateZ(0);
+    }
+    to{
+        transform:translate(-50%,-50%) rotateX(65deg) rotateZ(360deg);
+    }
+}
+
+@keyframes orbit2{
+    from{
+        transform:translate(-50%,-50%) rotateX(65deg) rotateZ(0);
+    }
+    to{
+        transform:translate(-50%,-50%) rotateX(65deg) rotateZ(360deg);
+    }
+}
+
+@keyframes orbit3{
+    from{
+        transform:translate(-50%,-50%) rotateX(65deg) rotateZ(0);
+    }
+    to{
+        transform:translate(-50%,-50%) rotateX(65deg) rotateZ(360deg);
+    }
+}
+
+/* ẢNH XOAY */
+.photo{
+    position:absolute;
+    width:68px;
+    height:68px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid white;
+    box-shadow:
+        0 0 10px #ff69b4,
+        0 0 25px #ff1493;
+    background:#160b2e;
+}
+
+/* ẢNH VÒNG 1 */
+.orbit1 .photo:nth-child(1){
+    left:50%;
+    top:-34px;
+    transform:translateX(-50%);
+}
+
+.orbit1 .photo:nth-child(2){
+    right:-34px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.orbit1 .photo:nth-child(3){
+    left:50%;
+    bottom:-34px;
+    transform:translateX(-50%);
+}
+
+/* VÒNG 2 */
+.orbit2 .photo:nth-child(1){
+    left:50%;
+    top:-34px;
+    transform:translateX(-50%);
+}
+
+.orbit2 .photo:nth-child(2){
+    right:-34px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.orbit2 .photo:nth-child(3){
+    left:50%;
+    bottom:-34px;
+    transform:translateX(-50%);
+}
+
+.orbit2 .photo:nth-child(4){
+    left:-34px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+/* VÒNG 3 */
+.orbit3 .photo:nth-child(1){
+    left:50%;
+    top:-34px;
+    transform:translateX(-50%);
+}
+
+.orbit3 .photo:nth-child(2){
+    right:10%;
+    top:10%;
+}
+
+.orbit3 .photo:nth-child(3){
+    right:-34px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.orbit3 .photo:nth-child(4){
+    right:10%;
+    bottom:10%;
+}
+
+.orbit3 .photo:nth-child(5){
+    left:50%;
+    bottom:-34px;
+    transform:translateX(-50%);
+}
+
+.orbit3 .photo:nth-child(6){
+    left:10%;
+    bottom:10%;
+}
+
+.orbit3 .photo:nth-child(7){
+    left:-34px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.orbit3 .photo:nth-child(8){
+    left:10%;
+    top:10%;
+}
+
+/* TRÁI TIM */
+.heart{
+    position:fixed;
+    color:#ff3b9d;
+    font-size:20px;
+    pointer-events:none;
+    z-index:4;
+    text-shadow:
+        0 0 10px #ff1493,
+        0 0 25px #ff1493;
+    animation:heartFly linear forwards;
+}
+
+@keyframes heartFly{
+    0%{
+        transform:translateY(100vh) scale(.3) rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-10vh) scale(1.4) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ĐẾM NGƯỢC */
+.countdown{
+    position:fixed;
+    bottom:105px;
+    left:0;
+    width:100%;
+    text-align:center;
+    z-index:30;
+}
+
+.countdown h2{
+    font-size:17px;
+    margin-bottom:8px;
+    color:#ffb6e6;
+}
+
+#timer{
+    font-size:19px;
+    font-weight:bold;
+    text-shadow:0 0 15px #ff1493;
+}
+
+/* NÚT */
+button{
+    position:fixed;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:50;
+
+    border:0;
+    padding:13px 28px;
+    border-radius:30px;
+
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+
+    background:linear-gradient(45deg,#ff1493,#8a2be2);
+
+    box-shadow:
+        0 0 15px #ff1493,
+        0 0 35px rgba(255,20,147,.5);
+}
+
+/* LỜI CHÚC */
+.message{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.8);
+    padding:20px;
+}
+
+.box{
+    width:92%;
+    max-width:480px;
+    padding:28px 22px;
+    border-radius:25px;
+    text-align:center;
+
+    background:rgba(20,5,40,.92);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    box-shadow:
+        0 0 30px #ff1493,
+        0 0 80px rgba(138,43,226,.5);
+}
+
+.box h2{
+    color:#ff69b4;
+    margin-bottom:18px;
+}
+
+#typing{
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .title h1{
+        font-size:25px;
+    }
+
+    .center{
+        width:90px;
+        height:90px;
+    }
+
+    .orbit1{
+        width:205px;
+        height:205px;
+    }
+
+    .orbit2{
+        width:300px;
+        height:300px;
+    }
+
+    .orbit3{
+        width:395px;
+        height:395px;
+    }
+
+    .photo{
+        width:58px;
+        height:58px;
+    }
+
+    .countdown{
+        bottom:95px;
+    }
+
+    #timer{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="space" id="space"></div>
+
+<div class="title">
+    <h1>🎂 HAPPY BIRTHDAY ❤️</h1>
+</div>
+
+<div class="universe">
+
+    <!-- ẢNH Ở GIỮA -->
+    <div class="center">
+        <img src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167679738712194/quality_restoration_20260728204530852.jpg?ex=6a9ecc5d&is=6a9d7add&hm=79ee8dfb4997a335d486850feb48707a0c4fbb09c965d3ecab45e4cd3b4d8199&">
+    </div>
+
+    <!-- VÒNG 1 -->
+    <div class="orbit orbit1">
+
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167572632698950/Screenshot_20260814_161642_Instagram.jpg?ex=6a9ecc43&is=6a9d7ac3&hm=c6d8b06052ff27afb1484929b4c3e7cf05c4d9d11b13c4075deef6101f3e4f99&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167535831879760/FB_IMG_1784537162890-1.jpg?ex=6a9ecc3a&is=6a9d7aba&hm=6cad5a63f0cfafa52e1c0dcd3e3ed70e2358a44d90b008a7dbf95bd7d78d015c&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167499219800194/Screenshot_20260727_213615_Facebook.jpg?ex=6a9ecc32&is=6a9d7ab2&hm=380983a5ea9297047b427a91adef704d3368ebc544fd6637a61d9a2e01e92055&">
+
+    </div>
+
+    <!-- VÒNG 2 -->
+    <div class="orbit orbit2">
+
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167461752086528/FB_IMG_1784537098237.jpg?ex=6a9ecc29&is=6a9d7aa9&hm=4d08b98a4b33f60c3856aaf2ed5ccd0907aa88bc7393db1614f6070d70315402&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167617386053772/Screenshot_20260821_221339_Gallery.jpg?ex=6a9ecc4e&is=6a9d7ace&hm=2b506eb1d8d8a8c40c09d3f68f94ba46466cb7be4479400aa7631c19d2692235&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167646121103380/Screenshot_20260809_104903_Facebook.jpg?ex=6a9ecc55&is=6a9d7ad5&hm=9daa42106276061935ee98b89dab078cb03d3594c01245eef21770605e996fa4&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546168609204736131/9073eebfd4eb07e74115ba04d6f42ecc.png?ex=6a9ecd3a&is=6a9d7bba&hm=06a0ccd968235128ec1116d5a019f300c4ad07841de574c93b83f8f5b32a3229&">
+
+    </div>
+
+    <!-- VÒNG 3 -->
+    <div class="orbit orbit3">
+
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167713058128072/5f48b1c0cbfd51c6f8331e0a67fdff93.jpg?ex=6a9ecc65&is=6a9d7ae5&hm=dcd18a5e77e398d39f25041b917a5e6b5fb71426ac19ee92684e2742c7466328&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546167743856910356/Screenshot_20260818_143948_Instagram.jpg?ex=6a9ecc6c&is=6a9d7aec&hm=1cf2e5332f2160a2535a45026972f8ac1627cc56a68a09e5d540f1046ce028b1&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546168006676316240/Screenshot_20260822_191842_Photos__videos.jpg?ex=6a9eccab&is=6a9d7b2b&hm=252da7ee5c4a2d3e58d050ba26f7b29d1b5c86d69d64d0539a43acee73169e41&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546168071885164574/birthday.jpg?ex=6a9eccba&is=6a9d7b3a&hm=daff886e808328e266da2bd93d5b71077388b5628f20d4342c36402205665986&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546168156643659886/IMG_20260723_074220.jpg?ex=6a9eccce&is=6a9d7b4e&hm=e694fa853ac84d33a42fb79d31d33d3ca3d5c41135be6cd996149e34d07802ef&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546168220229181540/5ed6e37c1a360c92140a26f064762224.png?ex=6a9eccde&is=6a9d7b5e&hm=912486db710e4e9799a3a972d76fd11303774c043f099917f010ea1be3526a4b&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546168555161002234/FB_IMG_1783866785196.jpg?ex=6a9ecd2d&is=6a9d7bad&hm=650f28825216e7d030de036982864c94af0be9cf113c9e187f92eb60e205a047&">
+        <img class="photo" src="https://cdn.discordapp.com/attachments/1531343291499417600/1546174978272137256/Screenshot_20260822_193159_Photos__videos.jpg?ex=6a9ed329&is=6a9d81a9&hm=48453318e37b394c90f44982fc3e63de62f828a56b0044e49c5bf2582a5f3b9b&">
+
+    </div>
+
+</div>
+
+<!-- ĐẾM NGƯỢC -->
+<div class="countdown">
+    <h2>⏳ Sinh nhật đang đến...</h2>
+    <div id="timer">Đang tính...</div>
+</div>
+
+<button onclick="openMessage()">
+    💌 Mở lời chúc
+</button>
+
+<!-- LỜI CHÚC -->
+<div class="message" id="message">
+
+    <div class="box">
+
+        <h2>💖 Happy Birthday 💖</h2>
+
+        <div id="typing"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* =========================
+   TẠO SAO
+========================= */
+
+const space =
+document.getElementById("space");
+
+for(let i=0;i<220;i++){
+
+    const star =
+    document.createElement("div");
+
+    star.className="star";
+
+    star.style.left =
+        Math.random()*100+"%";
+
+    star.style.top =
+        Math.random()*100+"%";
+
+    const size =
+        Math.random()*3+1;
+
+    star.style.width=size+"px";
+    star.style.height=size+"px";
+
+    star.style.animationDelay =
+        Math.random()*3+"s";
+
+    space.appendChild(star);
+}
+
+
+/* =========================
+   MƯA TRÁI TIM
+========================= */
+
+function createHeart(){
+
+    const heart =
+    document.createElement("div");
+
+    heart.className="heart";
+
+    const hearts=[
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💓",
+        "💞",
+        "💘"
+    ];
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(Math.random()*hearts.length)
+        ];
+
+    heart.style.left =
+        Math.random()*100+"vw";
+
+    heart.style.fontSize =
+        14+Math.random()*25+"px";
+
+    heart.style.animationDuration =
+        4+Math.random()*5+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+}
+
+setInterval(createHeart,220);
+
+
+/* =========================
+   ĐẾM NGƯỢC
+========================= */
+
+/*
+   ĐỔI NGÀY SINH NHẬT TẠI ĐÂY
+
+   Ví dụ:
+   24/10/2026 lúc 00:00
+*/
+
+const birthday =
+new Date("October 24, 2026 00:00:00")
+.getTime();
+
+function countdown(){
+
+    const now =
+        new Date().getTime();
+
+    const distance =
+        birthday-now;
+
+    if(distance <= 0){
+
+        document.getElementById("timer")
+        .innerHTML =
+        "🎉 HÔM NAY LÀ SINH NHẬT! 🎉";
+
+        return;
+    }
+
+    const days =
+        Math.floor(
+            distance/(1000*60*60*24)
+        );
+
+    const hours =
+        Math.floor(
+            (distance%(1000*60*60*24))
+            /(1000*60*60)
+        );
+
+    const minutes =
+        Math.floor(
+            (distance%(1000*60*60))
+            /(1000*60)
+        );
+
+    const seconds =
+        Math.floor(
+            (distance%(1000*60))
+            /1000
+        );
+
+    document.getElementById("timer")
+    .innerHTML =
+    `${days} ngày •
+     ${hours} giờ •
+     ${minutes} phút •
+     ${seconds} giây`;
+}
+
+setInterval(countdown,1000);
+
+countdown();
+
+
+/* =========================
+   LỜI CHÚC CHẠY TỪNG CHỮ
+========================= */
+
+const text = `
+🎂 Chúc mừng sinh nhật người đặc biệt! 🩵
+
+Hôm nay sinh nhật chị Nguyệt,
+Chúc chị vui vẻ, hạnh phúc thật nhiều.
+Tuổi mới rực rỡ bao điều,
+Bình an, may mắn, mọi chiều đều vui.
+
+Mong cho nụ cười trên môi,
+Mỗi ngày thức giấc là đời thêm xanh.
+Đường xa dẫu có mong manh,
+Chị luôn vững bước, đạt thành ước mơ.
+
+Chúc chị chẳng phải bơ vơ,
+Có người bên cạnh, đợi chờ sẻ chia.
+Buồn phiền xin hãy bỏ qua,
+Tuổi mới chỉ nhận những quà yêu thương.
+
+Sinh nhật chẳng chỉ một ngày,
+Mà là khởi đầu tháng ngày thật vui.
+Chúc chị Nguyệt mãi xinh tươi,
+Tuổi mới hạnh phúc, nụ cười chẳng phai. 🎂
+
+Happy Birthday! 🎂🌌🩵
+`;
+
+function openMessage(){
+
+    const message =
+        document.getElementById("message");
+
+    message.style.display="flex";
+
+    const typing =
+        document.getElementById("typing");
+
+    typing.innerHTML="";
+
+    let i=0;
+
+    function type(){
+
+        if(i<text.length){
+
+            if(text[i]==="\n"){
+                typing.innerHTML+="<br>";
+            }else{
+                typing.innerHTML+=text[i];
+            }
+
+            i++;
+
+            setTimeout(type,45);
+        }
+    }
+
+    type();
+}
+
+
+/* ĐÓNG LỜI CHÚC */
+
+document
+.getElementById("message")
+.addEventListener("click",function(e){
+
+    if(e.target===this){
+        this.style.display="none";
+    }
+
+});
+
+</script>
+
+  
+</body>
+</html>
